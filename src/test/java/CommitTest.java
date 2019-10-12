@@ -9,12 +9,12 @@ public class CommitTest {
 
     @Before
     public void before() {
-        commit1 = new Commit("refactor data", CommitType.REFACTOR, 1111);
+        commit1 = new Commit("refactor datalist", CommitType.REFACTOR, 1111);
     }
 
     @Test
     public void hasDescription() {
-        assertEquals("refactor data", commit1.getDescription());
+        assertEquals("refactor datalist", commit1.getDescription());
     }
 
     @Test

@@ -33,4 +33,18 @@ public class GitHubAccount {
     public void downgrade() {
         this.accountType = accountType.FREE;
     }
+
+    public int repositoriesCount() {
+        return this.repositories.size();
+    }
+
+    public void addRepo(Repository repository) {
+        this.repositories.put(repository.getName(), repository);
+    }
+
+    public Repository findRepoByName(String repoName) {
+        return this.repositories.get(repoName);
+    }
+
+
 }

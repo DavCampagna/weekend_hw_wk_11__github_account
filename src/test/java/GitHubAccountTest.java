@@ -6,10 +6,16 @@ import static junit.framework.TestCase.assertEquals;
 public class GitHubAccountTest {
 
     GitHubAccount gitHubAccount;
+    Repository repository1;
+    Repository repository2;
 
     @Before
     public void before() {
         gitHubAccount = new GitHubAccount("Kev3000", "Kevin Spade");
+        repository1 = new Repository("pyramids_lab", "", RepositoryType.PUBLIC);
+        repository2 = new Repository("events_lab", "", RepositoryType.PUBLIC);
+
+        gitHubAccount.addRepo(repository1);
     }
 
     @Test
@@ -40,9 +46,20 @@ public class GitHubAccountTest {
         assertEquals(AccountType.FREE, gitHubAccount.getAccountType());
     }
 
+    @Test
+    public void canAddRepo() {
+        assertEquals(1, gitHubAccount.repositoriesCount());
+    }
+
+    @Test
+    public void canFindRepoByName() {
+        Repository foundRepo = gitHubAccount.findRepoByName("pyramids_lab");
+        assertEquals(repository1, foundRepo);
+    }
+
 //    @Test
-//    public void canAddRepo() {
-//        gitHubAccount.add(Repository repository)
+//    public void canFindRepoWithTheMostCommits() {
+//
 //    }
 
 
