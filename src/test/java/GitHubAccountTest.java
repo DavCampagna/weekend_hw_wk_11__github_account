@@ -48,7 +48,8 @@ public class GitHubAccountTest {
 
     @Test
     public void canAddRepo() {
-        assertEquals(1, gitHubAccount.repositoriesCount());
+        gitHubAccount.addRepo(repository2);
+        assertEquals(2, gitHubAccount.repositoriesCount());
     }
 
     @Test
@@ -57,10 +58,12 @@ public class GitHubAccountTest {
         assertEquals(repository1, foundRepo);
     }
 
-//    @Test
-//    public void canFindRepoWithTheMostCommits() {
-//
-//    }
+    @Test
+    public void canFindRepoWithTheMostCommits() {
+        gitHubAccount.addRepo(repository2);
+
+
+    }
 
 
 }

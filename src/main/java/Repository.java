@@ -44,14 +44,14 @@ public class Repository {
         return foundCommit;
     }
 
-//    public Commit findCommitByType(CommitType commitType) {
-//        Commit foundCommit = null;
-//        for(Commit commit : this.commits) {
-//            if (commit.getCommitType() == commitType){
-//                foundCommit = commit;
-//            }
-//        }
-////        return foundCommit;
-//    }
+    public Commit findCommitByType(CommitType commitType) {
+        Commit foundCommit = null;
+        for(Commit commit : this.commits) {
+            if (commit.getCommitType() == commitType){
+                foundCommit = commit;
+            }
+        }
+        return foundCommit;
+    }
 
 }

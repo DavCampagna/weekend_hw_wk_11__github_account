@@ -17,7 +17,7 @@ public class RepositoryTest {
         commit1 = new Commit("refactor table", CommitType.REFACTOR, 1111);
         commit2 = new Commit("refactor datalist", CommitType.REFACTOR, 1112);
         commit3 = new Commit("update CSS", CommitType.OTHER, 1113);
-        commit3 = new Commit("fix bug in topic filter", CommitType.BUGFIX, 1113);
+        commit4 = new Commit("fix bug in topic filter", CommitType.BUGFIX, 1113);
 
         repository.addCommit(commit1);
         repository.addCommit(commit2);
@@ -56,11 +56,11 @@ public class RepositoryTest {
         assertEquals(commit1, foundCommit);
     }
 
-//    @Test
-//    public void canFindCommitByType() {
-//        Commit foundCommit = repository.findCommitByType(CommitType.OTHER);
-//        assertEquals(commit3, foundCommit);
-//    }
+    @Test
+    public void canFindCommitByType() {
+        Commit foundCommit = repository.findCommitByType(CommitType.OTHER);
+        assertEquals(commit3, foundCommit);
+    }
 
 
 }
