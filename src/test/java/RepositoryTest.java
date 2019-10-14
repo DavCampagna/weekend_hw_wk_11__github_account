@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static junit.framework.TestCase.assertEquals;
 
 public class RepositoryTest {
@@ -41,6 +43,7 @@ public class RepositoryTest {
 
     @Test
     public void commitsStartAsEmpty() {
+        repository = new Repository("pyramids_lab", "", RepositoryType.PUBLIC);
         assertEquals(0, repository.commitsCount());
     }
 
@@ -57,10 +60,12 @@ public class RepositoryTest {
     }
 
     @Test
-    public void canFindCommitByType() {
-        Commit foundCommit = repository.findCommitByType(CommitType.OTHER);
-        assertEquals(commit3, foundCommit);
+    public void canFindCommitsByType() {
+        ArrayList<Commit> commitsByType = repository.findCommitsByType(CommitType.REFACTOR);
+        assert(commitsByType.contains(commit1));
+        assert(commitsByType.contains(commit2));
     }
-
+//    How can I represent the content of the newly created ArrayList in the assertEquals to show its content?
+//    assertEquals([commit1, commit2], commitsByType);
 
 }
